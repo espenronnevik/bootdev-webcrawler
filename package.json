@@ -1,0 +1,13 @@
+{
+  "name": "bootdev-webcrawler",
+  "version": "0.1.0",
+  "description": "A boot.dev guided web crawler project",
+  "main": "main.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node main.js"
+  },
+  "author": "",
+  "license": "GPL-3.0-or-later"
+}
