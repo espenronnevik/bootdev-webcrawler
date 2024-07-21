@@ -1,9 +1,10 @@
 import { argv } from "node:process";
 import { crawlPage } from "./crawl.js";
+import { printReport } from "./report.js";
 
 async function main(baseURL) {
   let pages = await crawlPage(baseURL);
-  console.log(pages);
+  printReport(pages);
 }
 
 if (!argv.length === 2) {
