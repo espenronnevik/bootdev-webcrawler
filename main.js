@@ -2,7 +2,8 @@ import { argv } from "node:process";
 import { crawlPage } from "./crawl.js";
 
 async function main(baseURL) {
-  await crawlPage(baseURL);
+  let pages = await crawlPage(baseURL);
+  console.log(pages);
 }
 
 if (!argv.length === 2) {
