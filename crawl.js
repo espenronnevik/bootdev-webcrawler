@@ -23,4 +23,8 @@ function getURLsFromHTML(htmlBody, baseURL) {
   return urls;
 }
 
-export { normalizeURL, getURLsFromHTML };
+function crawlPage(url) {
+  return;
+}
+
+export { normalizeURL, getURLsFromHTML, crawlPage };
