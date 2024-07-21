@@ -1,8 +1,8 @@
 import { argv } from "node:process";
-import { crawlPage } from "./crawl";
+import { crawlPage } from "./crawl.js";
 
-function main(baseURL) {
-  crawlPage(baseURL);
+async function main(baseURL) {
+  await crawlPage(baseURL);
 }
 
 if (!argv.length === 2) {

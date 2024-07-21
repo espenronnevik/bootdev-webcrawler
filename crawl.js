@@ -23,8 +23,27 @@ function getURLsFromHTML(htmlBody, baseURL) {
   return urls;
 }
 
-function crawlPage(url) {
-  return;
+async function crawlPage(url) {
+  let resp = null;
+
+  try {
+    resp = await fetch(url);
+  } catch (err) {
+    console.error(`Error: ${err.message}`);
+    return;
+  }
+
+  if (resp.status >= 400) {
+    console.log(`HTTP error on URL ${url}`);
+    return;
+  }
+
+  if (resp.headers.get("content-type") != "text/html") {
+    console.log(`Content type is not text / html for URL ${url}`);
+    return;
+  }
+
+  console.log(await resp.text());
 }
 
 export { normalizeURL, getURLsFromHTML, crawlPage };
